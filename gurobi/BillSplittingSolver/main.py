@@ -16,6 +16,8 @@ b['Person 2'] = -36.75
 b['Person 3'] = 62.25
 b['Person 4'] = -36.75
 
+maxval = max(b.values())
+maxval *= 2
 ########################################################################################################################
 # Variables
 
@@ -45,7 +47,7 @@ for p in P:
 for p1 in P:
     for p2 in P:
         # If T > 0 --> DT = 1
-        m.addConstr(T[p1][p2] <= 100 * DT[p1][p2])
+        m.addConstr(T[p1][p2] <= maxval * DT[p1][p2])
         pass
 
 # C3 - ALL balances must align
