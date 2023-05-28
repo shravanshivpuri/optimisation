@@ -1,5 +1,5 @@
 from gurobipy import *
-m = Model("Sudoku")
+m = Model("BillSplitting")
 m.setParam('MIPGap', 0)
 ########################################################################################################################
 # Sets
@@ -11,10 +11,10 @@ for p in ['Person 1','Person 2','Person 3', 'Person 4']:
 # Data
 n = len(P)  # Number of people
 b = dict()  # Required balances
-b['Person 1'] = 11.25
-b['Person 2'] = -36.75
-b['Person 3'] = 62.25
-b['Person 4'] = -36.75
+b['Person 1'] = -4.85750
+b['Person 2'] = 11.57250
+b['Person 3'] = 46.14250
+b['Person 4'] = -52.85750
 
 maxval = max(b.values())
 maxval *= 2
